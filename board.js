@@ -46,8 +46,13 @@ class Board {
     return this.board[pos[0]][pos[1]] == null;
   }
 
+  isValidPos(pos) {
+    const range = [0, 1, 2];
+    return range.includes(pos[0]) && range.includes(pos[1]);
+  }
+
   placeMark(pos, mark) {
-    if(this.isEmpty(pos)) {
+    if(this.isValidPos(pos) && this.isEmpty(pos)) {
       this.board[pos[0]][pos[1]] = mark;
       return true;
     }
