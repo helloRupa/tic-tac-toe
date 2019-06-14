@@ -1,5 +1,6 @@
 const Game = require('./game');
 const HumanPlayer = require('./humanPlayer');
+const ComputerPlayer = require('./computerPlayer');
 const readline = require('readline');
 
 const reader = readline.createInterface({
@@ -7,7 +8,7 @@ const reader = readline.createInterface({
   output: process.stdout
 });
 
-const player1 = new HumanPlayer('Bart', 'X');
+const player1 = new ComputerPlayer('AI', 'X');
 const player2 = new HumanPlayer('Lisa', 'O');
 let ttt = new Game(reader, player1, player2);
 
